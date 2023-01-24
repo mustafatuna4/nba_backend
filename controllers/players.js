@@ -4,17 +4,21 @@ const NBA = require("nba");
 const { response } = require("express");
 
 playersRouter.get("/", async (request, response) => {
+  console.log("bukayo saske");
   const bigData = await NBA.stats.playerStats({
     Season: "2022-23",
   });
+
+  console.log("saka");
   const allPlayers = bigData.leagueDashPlayerStats;
   const playerNames = allPlayers.map((player) => ({
     id: player.playerId,
     name: player.playerName,
     team: player.teamAbbreviation,
   }));
+
+  console.log(playerNames, "cmon forsan");
   response.status(201).json(playerNames);
-  console.log(playerNames);
 });
 
 playersRouter.post("/", async (request, response, next) => {
