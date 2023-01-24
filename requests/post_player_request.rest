@@ -1,0 +1,7 @@
+POST http://localhost:3003/api/players 
+Content-Type: application/json 
+
+{
+    "userId": "63bd48eb0c77177f1a4f23e4",
+    "name":"Stephen Curry"
+}
